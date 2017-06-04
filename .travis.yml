@@ -1,9 +1,7 @@
 language: node_js
 node_js:
   - "node"
-before_script:
-  - jdk_switcher use oraclejdk8
 script:
-  - npm test
+  - npm unit
 notifications:
   slack: quiznology:1ipc7gkd63FAZw1pujLkysiH
