@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - "node"
+script:
+  - npm test
+notifications:
+  slack: quiznology:1ipc7gkd63FAZw1pujLkysiH

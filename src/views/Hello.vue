@@ -1,8 +1,8 @@
 
 <template>
-  <div class="container has-text-centered">
+  <div class="hello container has-text-centered">
       <h1>Quiznology</h1>
-      <h2>Under construction...</h2>    
+      <h2>Under construction...</h2>
   </div>
 </template>
 
