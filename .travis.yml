@@ -2,6 +2,6 @@ language: node_js
 node_js:
   - "node"
 script:
-  - npm unit
+  - npm run unit
 notifications:
   slack: quiznology:1ipc7gkd63FAZw1pujLkysiH
