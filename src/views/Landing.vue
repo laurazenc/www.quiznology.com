@@ -32,7 +32,7 @@ export default {
 <style scoped lang="scss">
   .landing {
     align-items: center!important;
-    justify-content: center;    
+    justify-content: center;
     color: white;
     background-color: rgba(0,0,0,0.7)!important;
     overflow: hidden;
@@ -53,6 +53,14 @@ export default {
     background-repeat: no-repeat;
     z-index: -1;
     opacity: 0.1;
+  }
+
+
+  .landing-content {
+    display: flex;
+    height: 300px;
+    justify-content: space-between;
+    flex-direction: column;
   }
 
   .question {
