@@ -23,6 +23,8 @@
         </figure>
         Profile
       </a>
+      <a class="nav-item is-tab">Sign up</a>
+      <router-link class="nav-item is-tab" to="/login">Log in</router-link>
       <a class="nav-item is-tab">Log out</a>
     </div>
   </div>
