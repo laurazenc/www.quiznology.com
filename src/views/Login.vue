@@ -17,12 +17,16 @@
                   <p class="msg"> <strong>Hello World</strong>, </p>
                   <p class="msg">identifícate utilizando tu cuenta <strong>Github</strong> </p>
                 </div>
-                <a class="login-button button is-black is-large is-fullwidth">
-                  <icon class="icon is-large" name="github"></icon>
-                  <strong>
-                    Login with Github
-                  </strong>
-                </a>
+
+                <form class="login-form" @submit.prevent="login">
+                  <button class="login-button button is-black is-large is-fullwidth" type="submit">
+                    <icon class="icon is-large" name="github"></icon>
+                    <strong>
+                      Login with Github
+                    </strong>
+                  </button>
+                </form>
+
                 <div class="has-text-centered">
                   <small>¿No tienes cuenta? <a href="#">Crear cuenta</a></small>
                 </div>
@@ -37,11 +41,14 @@
 </template>
 
 <script>
+import auth from '../auth';
+
 export default {
   name: 'login',
-  data() {
-    return {
-    };
+  methods: {
+    login() {
+      auth.login();
+    },
   },
 };
 </script>
