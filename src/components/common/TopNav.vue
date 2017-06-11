@@ -2,9 +2,9 @@
   <nav class="nav has-shadow">
   <div class="container">
     <div class="nav-left">
-      <router-link class="nav-item" to="/">
+      <router-link id="top-nav-title" class="nav-item" to="/">
         <img src="../../assets/logo.png" alt="Vue logo">
-        <b>QUIZ</b>nology
+        <span alt="Quiznology"><b>QUIZ</b>nology</span>
       </router-link>
       <router-link class="nav-item is-tab is-hidden-mobile" to="/">Home</router-link>
       <router-link class="nav-item is-tab is-hidden-mobile" to="/about">About</router-link>
