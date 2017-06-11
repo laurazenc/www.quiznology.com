@@ -1,7 +1,7 @@
 {
   "name": "quiznology",
   "version": "0.0.1",
-  "description": "Quiznology is an open source platform for developers around the world to challenge themselves through tests.",
+  "description": "Quiznology is an open source platform for developers around the world to challenge themselves.",
   "contributors": [
     {
       "name": "José Vicente Sogorb",
@@ -43,15 +43,19 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
+    "vue": "^2.3.3",
     "bulma": "^0.4.2",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.5",
-    "vue": "^2.3.3",
+    "vue-authenticate": "^1.2.7",
     "vue-awesome": "^2.3.1",
-    "vue-router": "^2.3.1"
+    "vue-axios": "^2.0.2",
+    "vue-resource": "^1.3.4",
+    "vue-router": "^2.3.1",
+    "vuex": "^2.3.1",
+    "autoprefixer": "^6.7.2"
   },
   "devDependencies": {
-    "autoprefixer": "^6.7.2",
     "axios": "^0.16.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",

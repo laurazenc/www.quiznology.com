@@ -7,6 +7,8 @@ import Login from '@/views/Login';
 Vue.use(Router);
 
 export default new Router({
+  hashbang: false,
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -17,11 +19,24 @@ export default new Router({
       path: '/about',
       name: 'About',
       component: About,
+      access: {
+        requiresLogin: true,
+      },
     },
     {
       path: '/login',
       name: 'Login',
       component: Login,
+    },
+    {
+      path: '/auth/callback',
+      component: {
+        template: '<div class="auth-component"></div>',
+      },
+    },
+    {
+      path: '*',
+      redirect: '/',
     },
   ],
 });

@@ -6,9 +6,6 @@
           <article class="media">
             <div class="media-content">
               <div class="content">
-                <!-- <figure class="image is-64x64">
-                  <img src="http://bulma.io/images/placeholders/128x128.png" alt="Image">
-                </figure> -->
                 <div class="has-text-centered">
                   <h1 class="title is-1"><span>QUIZ</span>nology</h1>
                 </div>
@@ -18,7 +15,7 @@
                   <p class="msg">identifícate utilizando tu cuenta <strong>Github</strong> </p>
                 </div>
 
-                <form class="login-form" @submit.prevent="login">
+                <form class="login-form" @submit.prevent="auth('github')">
                   <button class="login-button button is-black is-large is-fullwidth" type="submit">
                     <icon class="icon is-large" name="github"></icon>
                     <strong>
@@ -41,13 +38,29 @@
 </template>
 
 <script>
-import auth from '../auth';
-
 export default {
   name: 'login',
+  data() {
+    return {
+      response: null,
+    };
+  },
   methods: {
-    login() {
-      auth.login();
+    auth(provider) {
+      if (this.$auth.isAuthenticated()) {
+        this.$auth.logout();
+      }
+      this.$auth.authenticate(provider).then((authResponse) => {
+        window.localStorage.setItem('token', authResponse.body.access_token);
+        this.$http.get('http://localhost:3001/user', { params: { access_token: authResponse.body.access_token } })
+        .then((response) => {
+          this.$store.dispatch('authenticate')
+          .then(() => {
+            this.$store.commit('login', response.body);
+            this.$router.push('/');
+          });
+        });
+      });
     },
   },
 };
