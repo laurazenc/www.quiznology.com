@@ -1,3 +1,5 @@
+import 'es6-promise/auto';
+
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Icon from 'vue-awesome';
