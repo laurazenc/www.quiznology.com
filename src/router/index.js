@@ -6,7 +6,7 @@ import Login from '@/views/Login';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   hashbang: false,
   mode: 'history',
   routes: [
@@ -19,9 +19,7 @@ export default new Router({
       path: '/about',
       name: 'About',
       component: About,
-      access: {
-        requiresLogin: true,
-      },
+      beforeEnter: guardRoute,
     },
     {
       path: '/login',
@@ -40,3 +38,11 @@ export default new Router({
     },
   ],
 });
+
+function guardRoute(to, from, next) {
+  const auth = router.app.$options.store.getters.isAuthenticated;
+  if (!auth) next({ path: '/login' });
+  else next();
+}
+
+export default router;

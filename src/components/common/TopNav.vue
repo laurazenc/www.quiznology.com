@@ -6,8 +6,8 @@
         <img src="../../assets/logo.png" alt="Vue logo">
         <span alt="Quiznology"><b>QUIZ</b>nology</span>
       </router-link>
-      <router-link class="nav-item is-tab is-hidden-mobile" to="/">Home</router-link>
-      <router-link class="nav-item is-tab is-hidden-mobile" to="/about">About</router-link>
+      <router-link v-if="isLoggedIn" class="nav-item is-tab is-hidden-mobile" to="/">Home</router-link>
+      <router-link v-if="isLoggedIn" class="nav-item is-tab is-hidden-mobile" to="/about">About</router-link>
     </div>
     <span class="nav-toggle">
       <span></span>
@@ -15,15 +15,14 @@
       <span></span>
     </span>
     <div class="nav-right nav-menu">
-      <router-link class="nav-item is-tab is-hidden-tablet is-active" to="/">Home</router-link>
-      <router-link class="nav-item is-tab is-hidden-tablet" to="/about">About</router-link>
+      <router-link v-if="!isLoggedIn" class="nav-item is-tab is-hidden-tablet is-active" to="/">Home</router-link>
+      <router-link v-if="!isLoggedIn" class="nav-item is-tab is-hidden-tablet" to="/about">About</router-link>
       <a class="nav-item is-tab" v-if="userData">
         <figure class="image is-16x16" style="margin-right: 8px;">
           <img src="http://bulma.io/images/jgthms.png">
         </figure>
         {{userData.login}}
       </a>
-      <a class="nav-item is-tab">Sign up</a>
       <router-link v-if="!isLoggedIn" class="nav-item is-tab" to="/login">Log in</router-link>
       <a class="nav-item is-tab" v-if="isLoggedIn" @click.prevent="logout()" >Log out</a>
     </div>

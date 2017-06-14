@@ -27,6 +27,8 @@ module.exports = {
     'no-console': 'off',
     "no-shadow": "off",
     "no-param-reassign": [2, { "props": false }],
+    "no-use-before-define": "off",
+
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       'js': 'never',
